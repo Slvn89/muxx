@@ -1,0 +1,16 @@
+{# templates/blog/index.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Blog{% endblock %}
+
+{% block body %}
+    <h1>My Blog</h1>
+
+    <div class="blog-content">
+        {# Include the content of the articles view here #}
+        {{ articlesContent | raw }}
+    </div>
+
+    {# Other blog content goes here #}
+{% endblock %}

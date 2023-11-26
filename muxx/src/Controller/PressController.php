@@ -1,0 +1,19 @@
+<?php
+
+// src/Controller/PressController.php
+namespace App\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+
+class PressController extends AbstractController
+{
+    /**
+     * @Route("/press", name="press")
+     */
+    public function index(): Response
+    {
+        return $this->render('press/index.html.twig');
+    }
+}

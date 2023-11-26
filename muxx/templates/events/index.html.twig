@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Événements{% endblock %}
+
+{% block body %}
+    <h1>Calendrier des événements</h1>
+    <div id="calendar"></div>
+
+    {# Inclusion du fichier JavaScript de FullCalendar #}
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js'></script>
+        <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/list@6.1.9/index.global.min.js'></script>
+
+   <script>
+   
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'listWeek',
+                locales: 'fr_FR',
+                events: '{{ path('api_events') }}',
+            });
+
+            calendar.render();
+        });
+    </script>
+{% endblock %}

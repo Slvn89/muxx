@@ -1,0 +1,166 @@
+body {
+    background-color: lightgray;
+}
+
+
+
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Style for the navbar */
+.navbar {
+    background-color: #333; /* Couleur de fond */
+    padding: 10px 20px; /* Espacement intérieur */
+}
+
+.navbar-list {
+    list-style: none; /* Supprimer les puces de la liste */
+    display: flex; /* Utiliser Flexbox pour aligner les éléments horizontalement */
+}
+
+.navbar-item {
+    margin-right: 20px; /* Espacement entre les éléments de la navbar */
+    position: relative; /* Position relative pour les animations */
+}
+
+.navbar-item a {
+    text-decoration: none;
+    color: #fff; /* Couleur du texte non survolé */
+    font-size: 16px;
+    transition: color 0.3s ease; /* Transition de la couleur du texte */
+}
+
+/* Ajouter un effet de soulignement lors du survol */
+.navbar-item a:hover {
+    color: #00bcd4; /* Couleur du texte au survol */
+}
+
+/* Animation de la ligne de soulignement */
+.navbar-item::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px; /* Épaisseur de la ligne de soulignement */
+    bottom: 0;
+    left: 0;
+    background-color: #00bcd4; /* Couleur de la ligne de soulignement */
+    visibility: hidden; /* Masquer la ligne par défaut */
+    transform: scaleX(0); /* Échelle de la ligne à 0 par défaut */
+    transition: all 0.3s ease-in-out; /* Transition pour l'animation */
+}
+
+/* Afficher la ligne de soulignement lors du survol */
+.navbar-item:hover::before {
+    visibility: visible;
+    transform: scaleX(1); /* Échelle de la ligne à 1 au survol */
+}
+
+
+
+
+
+
+/* styles pour le footer avec Liens Rapides */
+.footer {
+    background-color: #fff;
+    color: #000;
+    padding: 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-section {
+    flex: 1;
+}
+
+.footer-section h3 {
+    color: #000;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    text-decoration: none;
+    color: #000;
+}
+
+
+
+
+
+/* styles.css */
+.page {
+    position: relative;
+    width: 2880px;
+    height: 1620px;
+  }
+  
+  .ft10 { font-size: 333px; font-family: Times; color: #ffffff; }
+  .ft11 { font-size: 333px; font-family: Times; color: #ffffff; }
+  .ft12 { font-size: 342px; font-family: Times; color: #ffffff; }
+  .ft13 { font-size: 34px; font-family: Times; color: #000000; }
+  .ft14 { font-size: 34px; font-family: Times; color: #000000; }
+  .ft15 { font-size: 19px; font-family: Times; color: #000000; }
+  .ft16 { font-size: 52px; font-family: Times; color: #000000; }
+  /* ... Add more styles as needed */
+  
+
+/* styles.css */
+.page {
+    position: relative;
+    width: 2880px;
+    height: 6000px;
+  }
+  
+  .ft30 { top: 117px; white-space: nowrap; font-size: 30px; }
+  .ft32 { top: 104px; left: 300px; white-space: nowrap; font-size: 32px; }
+  /* Add more styles as needed */
+  
+
+
+
+  /* public/css/styles.css */
+
+.article-list {
+    list-style: none;
+    padding: 0;
+}
+
+.article-item {
+    margin-bottom: 20px;
+}
+
+.article-summary {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.read-more-button {
+    background-color: #3498db;
+   
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.full-content {
+    display: none;
+}

@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Articles{% endblock %}
+
+
+{% block body %}
+    <h1>Liste des Articles</h1>
+
+    {% if articles is not empty %}
+        <ul class="article-list">
+            {% for article in articles %}
+                <li class="article-item">
+                    <h2>{{ article.title }}</h2>
+                    <div class="article-summary">
+                        {{ article.content | striptags | length > 200 ? article.content | striptags | slice(0, 200) ~ '...' : article.content }}
+                    </div>
+                    {% if article.content | striptags | length > 200 %}
+                        <button class="read-more-button" onclick="expandContent(this)">Read More</button>
+                        <div class="full-content" style="display: none;">
+                            {{ article.content }}
+                        </div>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Aucun article n'est disponible pour le moment.</p>
+    {% endif %}
+
+    <script>
+        function expandContent(button) {
+            var fullContent = button.nextElementSibling;
+            fullContent.style.display = 'block';
+            button.style.display = 'none';
+        }
+    </script>
+{% endblock %}

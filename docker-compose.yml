@@ -1,0 +1,46 @@
+version: '3'
+
+services:
+  
+  database:
+    image: mysql:8.0.35
+    container_name: database_muxx
+    restart: always
+    environment:
+      MYSQL_DATABASE: muxx
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    volumes:
+      - database_data:/var/lib/mysql
+    networks:
+      - dev
+  
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: phpmyadmin_muxx
+    depends_on:
+      - database
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: database
+      MYSQL_ROOT_PASSWORD: ""
+    networks:
+      - dev
+
+  www:
+    build: docker
+    container_name: www_muxx
+    restart: always
+    ports:
+      - "8000:80"
+    volumes:
+      - ./docker/vhosts:/etc/apache2/sites-enabled
+      - ./:/var/www
+    networks:
+      - dev
+
+networks:
+  dev:
+
+volumes:
+  database_data:

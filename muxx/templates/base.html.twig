@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+        {% block styles %}
+    <style>
+        /* Your CSS styles go here */
+        .article-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .article-item {
+            margin-bottom: 20px;
+        }
+
+        .article-summary {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .read-more-button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .full-content {
+            display: none;
+        }
+    </style>
+{% endblock %}
+    <link rel="stylesheet" href="https://unpkg.com/@fullcalendar/core/main.css" />
+    <link rel="stylesheet" href="https://unpkg.com/@fullcalendar/daygrid/main.css" />
+
+</head>
+    <body>
+      {% include 'includes/navbar.html.twig' %}
+        {% block body %}{% endblock %}
+
+    {% include 'includes/footer.html.twig' %}
+    </body>
+</html>

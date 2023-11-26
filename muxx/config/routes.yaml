@@ -1,0 +1,42 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+home:
+    path: /
+    controller: App\Controller\HomeController::index
+
+workshops:
+    path: /workshops
+    controller: App\Controller\WorkshopsController::index
+
+events:
+    path: /events
+    controller: App\Controller\EventsController::index
+
+api_events:
+    path: api/events
+    controller: App\Controller\ApiEventsController::index
+
+cafe_muxx:
+    path: /cafe-muxx
+    controller: App\Controller\CafeMuxxController::index
+
+shop_agencee:
+    path: /shop-agencee
+    controller: App\Controller\ShopAgenceeController::index
+
+press:
+    path: /press
+    controller: App\Controller\PressController::index
+
+blog:
+    path: /blog
+    controller: App\Controller\BlogController::index
+
+article:
+    path: /article
+    controller: App\Controller\ArticleController::index
+
